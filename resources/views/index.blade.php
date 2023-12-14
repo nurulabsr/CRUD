@@ -5,14 +5,20 @@
 <div class="main-content mt-5">
     <div class="card">
         <div class="card-header">
-            All post
-            <a href="" class="btn btn-secondary">Create</a>
-            <a href="" class="btn btn-warning">Recycle Bin</a>
+           <div class="row">
+            <div class="col-md-6">
+              <h4>All post</h4>
+            </div>
+            <div class="col-md-6 d-flex justify-content-end">
+                <a href="" class="btn btn-secondary">Create</a>
+                <a href="" class="btn btn-warning">Recycle Bin</a>
+            </div>
+           </div>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table class="table table-striped">
-                    <thead>
+                <table class="table table-striped table-bordered border-dark">
+                    <thead style="background: #f2f2f2">
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Image</th>
@@ -34,6 +40,7 @@
                             <td>Hunter</td>
                             <td>12/14/2023</td>
                             <td>
+                                <a href="" class="btn btn-"></a>
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="" class="btn btn-danger btn-sm">Delete</a>
                             </td>
