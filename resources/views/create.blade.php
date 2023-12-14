@@ -7,7 +7,7 @@
         <div class="card-header">
            <div class="row">
             <div class="col-md-6">
-              <h4>All post</h4>
+              <h4>Create post</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
                 <a href="" class="btn btn-secondary">Create</a>
@@ -16,7 +16,11 @@
            </div>
         </div>
         <div class="card-body">
-           Hello
+           <form action="">
+            <div class="form-group">
+                <label for="">Image</label>
+            </div>
+           </form>
         </div>
     </div>
 </div>
