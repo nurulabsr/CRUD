@@ -20,13 +20,18 @@
             <div class="form-group">
                 <label class="form-label" for="">Image</label>
                 <input type="file" class="form-control">
-
+            </div>
+            
+            <div class="form-group">
                 <label class="form-label" for="">Title</label>
                 <input type="text" class="form-control">
-
+            </div>
+            <div class="form-group">
                 <label class="form-label" for="">Description</label>
                 <input type="text" class="form-control">
             </div>
+
+            
            </form>
         </div>
     </div>
