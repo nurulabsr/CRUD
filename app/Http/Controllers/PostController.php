@@ -42,7 +42,7 @@ class PostController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('edit');
     }
 
     /**
@@ -58,6 +58,6 @@ class PostController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        return view('trashed');
     }
 }
