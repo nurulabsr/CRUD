@@ -18,7 +18,14 @@
         <div class="card-body">
            <form action="">
             <div class="form-group">
-                <label for="">Image</label>
+                <label class="form-label" for="">Image</label>
+                <input type="file" class="form-control">
+
+                <label class="form-label" for="">Title</label>
+                <input type="text" class="form-control">
+
+                <label class="form-label" for="">Description</label>
+                <input type="text" class="form-control">
             </div>
            </form>
         </div>
