@@ -28,7 +28,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="">Description</label>
-                <input type="text" class="form-control">
+                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
             </div>
 
             
