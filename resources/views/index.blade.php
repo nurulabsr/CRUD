@@ -10,7 +10,7 @@
               <h4>All post</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
-                <a href="" class="btn btn-secondary">Create</a>
+                <a href="{{route('post.create')}}" class="btn btn-secondary">Create</a>
                 <a href="" class="btn btn-warning">Recycle Bin</a>
             </div>
            </div>
