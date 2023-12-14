@@ -21,12 +21,12 @@
                     <thead style="background: #f2f2f2">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Title</th>
-                            <th scope="col">Description</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Publish Date</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" style="width: 10%">Image</th>
+                            <th scope="col" style="width: 20%">Title</th>
+                            <th scope="col" style="width: 30%">Description</th>
+                            <th scope="col" style="width: 10%">Category</th>
+                            <th scope="col" style="width: 10%">Publish Date</th>
+                            <th scope="col" style="width: 20%">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -40,7 +40,7 @@
                             <td>Hunter</td>
                             <td>12/14/2023</td>
                             <td>
-                                <a href="" class="btn btn-"></a>
+                                <a href="" class="btn btn-success btn-sm">Show</a>
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="" class="btn btn-danger btn-sm">Delete</a>
                             </td>
