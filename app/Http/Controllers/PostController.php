@@ -88,7 +88,9 @@ class PostController extends Controller
             $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
            }
            
-        
+           $post = Post::findOrFail($id);
+           $post->title = $request->title;
+         
         
     }
 
