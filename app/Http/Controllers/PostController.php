@@ -79,6 +79,7 @@ class PostController extends Controller
             'category_id' => ['required', 'integer', 'numeric', 'between:0,1000009'],
            ]); 
 
+           $post = Post::findOrFail($id);
            if($request->hasFile('image')){
             $request->validate([
                 'image' => ['required', 'max:2028', 'mimes:jpeg,png,jpg', 'image'],
@@ -86,11 +87,13 @@ class PostController extends Controller
 
             $ImageFileNameChangedWithTime = time().'_'.$request->image->getClientOriginalName();
             $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
+            $post->image = 'storage/'.$fileName;
            }
            
-           $post = Post::findOrFail($id);
            $post->title = $request->title;
-         
+           $post->description = $request->description;
+           $post->category_id = $request->category_id;
+           $post->save(); 
         
     }
 
