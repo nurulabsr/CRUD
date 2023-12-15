@@ -18,6 +18,7 @@
         <div class="card-body">
            <form action="">
             <div class="form-group">
+                <img src="{{asset($updatePost->image)}}" width="80px" alt="">
                 <label class="form-label" for="">Image</label>
                 <input type="file" class="form-control">
             </div>
