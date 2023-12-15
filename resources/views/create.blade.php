@@ -18,7 +18,7 @@
               <h4>Create post</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
-                <a href="" class="btn btn-secondary m-1">Back</a>
+                <a href="{{route('post.store')}}" class="btn btn-secondary m-1">Back</a>
                 <a href="" class="btn btn-warning m-1">Recycle Bin</a>
             </div>
             

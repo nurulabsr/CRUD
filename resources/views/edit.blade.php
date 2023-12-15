@@ -10,13 +10,13 @@
               <h4>Create post</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
-                <a href="" class="btn btn-secondary m-1">Back</a>
+                <a href="{{route('post.store')}}" class="btn btn-secondary m-1">Back</a>
                 <a href="" class="btn btn-warning m-1">Recycle Bin</a>
             </div>
            </div>
         </div>
         <div class="card-body">
-           <form action="">
+           <form action="" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <img src="{{asset($updatePost->image)}}" width="80px" alt="">
                 <label class="form-label" for="">Image</label>
