@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PostController extends Controller
 {
@@ -87,6 +88,9 @@ class PostController extends Controller
 
             $ImageFileNameChangedWithTime = time().'_'.$request->image->getClientOriginalName();
             $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
+            //delete previous image
+            File::delete(public_path($post->image));
+            //save new image in the storage
             $post->image = 'storage/'.$fileName;
            }
            
