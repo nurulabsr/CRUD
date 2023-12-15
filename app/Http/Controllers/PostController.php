@@ -83,9 +83,13 @@ class PostController extends Controller
             $request->validate([
                 'image' => ['required', 'max:2028', 'mimes:jpeg,png,jpg', 'image'],
             ]);
+
+            $ImageFileNameChangedWithTime = time().'_'.$request->image->getClientOriginalName();
+            $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
            }
            
-         
+        
+        
     }
 
     /**
