@@ -87,7 +87,7 @@ class PostController extends Controller
             ]);
 
             $ImageFileNameChangedWithTime = time().'_hunter_'.$request->image->getClientOriginalName();
-            $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
+            $fileName = $request->image->storeAs('ImageDirectory', $ImageFileNameChangedWithTime);
             //delete previous image
             File::delete(public_path($post->image));
             //save new image in the storage
