@@ -25,21 +25,21 @@
             
             <div class="form-group">
                 <label class="form-label" for="">Title</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" value="{{$updatePost->title}}">
             </div>
             <div class="form-group">
                 <label class="form-label" for="">Category</label>
                 <select class="form-control" name="" id="">
-                    <option value="">Assembly Language</option>
-                    <option value="">Rust Language</option>
-                    <option value="">C++ Language</option>
-                    <option value="">Java Language</option>
+                    <option value="">Select</option>
+                    @foreach($categories as $category)
+                    <option {{$category->id == $updatePost->category_id ? 'Selected':''}} value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
                 </select>
 
             </div>
             <div class="form-group">
-                <label class="form-label" for="">Description</label>
-                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                <label class="form-label" for=""></label>
+                <textarea class="form-control" name="" id="" cols="30" rows="10">{{$updatePost->description}}</textarea>
             </div>
 
             <div class="form-group mt-3">
