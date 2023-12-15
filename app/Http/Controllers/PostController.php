@@ -86,7 +86,7 @@ class PostController extends Controller
                 'image' => ['required', 'max:2028', 'mimes:jpeg,png,jpg', 'image'],
             ]);
 
-            $ImageFileNameChangedWithTime = time().'_'.$request->image->getClientOriginalName();
+            $ImageFileNameChangedWithTime = time().'_hunter_'.$request->image->getClientOriginalName();
             $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
             //delete previous image
             File::delete(public_path($post->image));
