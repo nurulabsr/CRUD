@@ -73,7 +73,19 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        return $request->all();
+        $request->validate([
+            'title' => ['required', 'string', 'max:250', 'min:20'],
+            'description' => ['required', 'string' , 'max:20000', 'min:100'],
+            'category_id' => ['required', 'integer', 'numeric', 'between:0,1000009'],
+           ]); 
+
+           if($request->hasFile('image')){
+            $request->validate([
+                'image' => ['required', 'max:2028', 'mimes:jpeg,png,jpg', 'image'],
+            ]);
+           }
+           
+         
     }
 
     /**
