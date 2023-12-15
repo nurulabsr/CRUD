@@ -31,8 +31,8 @@ class PostController extends Controller
     {
        $request->validate([
         'image' => ['required', 'max:2028', 'mimes:jpeg,png,jpg', 'image'],
-        'title' => ['required', 'max:250'],
-        'description' => ['required', 'max:20000', 'min:100'],
+        'title' => ['required', 'string', 'max:250'],
+        'description' => ['required', 'string' , 'max:20000', 'min:100'],
         'category_id' => ['required', 'integer', 'numeric', 'between:0,1000000000099'],
        ]);   
     }
