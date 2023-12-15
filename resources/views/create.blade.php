@@ -16,19 +16,20 @@
            </div>
         </div>
         <div class="card-body">
-           <form action="">
+           <form action="{{route(post.store)}}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <label class="form-label" for="">Image</label>
-                <input type="file" class="form-control">
+                <input name='image' type="file" class="form-control">
             </div>
             
             <div class="form-group">
                 <label class="form-label" for="">Title</label>
-                <input type="text" class="form-control">
+                <input name="title" type="text" class="form-control">
             </div>
             <div class="form-group">
                 <label class="form-label" for="">Category</label>
-                <select class="form-control" name="" id="">
+                <select name="category_id" class="form-control" id="">
                     <option value="">Assembly Language</option>
                     <option value="">Rust Language</option>
                     <option value="">C++ Language</option>
@@ -38,7 +39,7 @@
             </div>
             <div class="form-group">
                 <label class="form-label" for="">Description</label>
-                <textarea class="form-control" name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="description" class="form-control" name="" id="" cols="30" rows="10"></textarea>
             </div>
 
             <div class="form-group mt-3">
