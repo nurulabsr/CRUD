@@ -17,6 +17,7 @@
         </div>
         <div class="card-body">
            <form action="" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <img src="{{asset($updatePost->image)}}" width="80px" alt="">
                 <label class="form-label" for="">Image</label>
