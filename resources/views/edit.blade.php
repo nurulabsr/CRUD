@@ -22,26 +22,26 @@
             <div class="form-group">
                 <img src="{{asset($updatePost->image)}}" width="80px" alt="">
                 <label class="form-label" for="">Image</label>
-                <input type="file" class="form-control">
+                <input name="image" type="file" class="form-control">
             </div>
             
             <div class="form-group">
                 <label class="form-label" for="">Title</label>
-                <input type="text" class="form-control" value="{{$updatePost->title}}">
+                <input name="title" type="text" class="form-control" value="{{$updatePost->title}}">
             </div>
             <div class="form-group">
                 <label class="form-label" for="">Category</label>
                 <select class="form-control" name="" id="">
                     <option value="">Select</option>
                     @foreach($categories as $category)
-                    <option {{$category->id == $updatePost->category_id ? 'Selected':''}} value="{{$category->id}}">{{$category->name}}</option>
+                    <option name="category_id" {{$category->id == $updatePost->category_id ? 'Selected':''}} value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                 </select>
 
             </div>
             <div class="form-group">
                 <label class="form-label" for=""></label>
-                <textarea class="form-control" name="" id="" cols="30" rows="10">{{$updatePost->description}}</textarea>
+                <textarea name="description" class="form-control"  id="" cols="30" rows="10">{{$updatePost->description}}</textarea>
             </div>
 
             <div class="form-group mt-3">
