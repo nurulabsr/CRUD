@@ -41,7 +41,7 @@
                             <td>{{$post->title}}</td>
                             <td>{{Illuminate\Support\Str::limit($post->description, 50)}}</td>
                             <td>{{$post->category->name}}</td>
-                            <td>{{$post->category_id}}</td>
+                            <td>{{ $post->created_at->format('Y-m-d') }}</td>
                             <td>
                                 <a href="" class="btn btn-success btn-sm">Show</a>
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
