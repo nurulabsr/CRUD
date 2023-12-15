@@ -94,7 +94,8 @@ class PostController extends Controller
            $post->description = $request->description;
            $post->category_id = $request->category_id;
            $post->save(); 
-        
+
+           return redirect()->route('post.index');
     }
 
     /**
