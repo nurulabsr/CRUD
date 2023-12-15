@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -18,7 +20,8 @@ class PostController extends Controller
      * Show the form for creating a new resource.
      */
     public function create(){
-     return view('create');   
+      $categories = Category::all();
+     return view('create', compact('categories'));   
     }
 
     /**
@@ -26,7 +29,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        return "Hello";
+       $request->validate([
+        'image' => ['required', 'max:2028', 'mimes:jpeg,png,jpg', 'image'],
+        'title' => ['required', 'max:250'],
+        'description' => ['required', 'max:20000', 'min:100'],
+        'category_id' => ['required', 'integer', 'numeric', 'between:0,1000000000099'],
+       ]);   
     }
 
     /**

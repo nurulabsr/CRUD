@@ -16,7 +16,7 @@
            </div>
         </div>
         <div class="card-body">
-           <form action="{{route(post.store)}}" method="POST" enctype="multipart/form-data">
+           <form action="{{route('post.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label class="form-label" for="">Image</label>
@@ -30,10 +30,10 @@
             <div class="form-group">
                 <label class="form-label" for="">Category</label>
                 <select name="category_id" class="form-control" id="">
-                    <option value="">Assembly Language</option>
-                    <option value="">Rust Language</option>
-                    <option value="">C++ Language</option>
-                    <option value="">Java Language</option>
+                    <option value="">Select</option>
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
                 </select>
 
             </div>
