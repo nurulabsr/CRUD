@@ -30,21 +30,25 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($getAllPost as $post)
+                            
+                        
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">{{$post->id}}</th>
                             <td>
-                                <img src="https://picsum.photos/200" alt="" class="img-fluid" width="80">
+                                <img src="{{ asset($post->image) }}" alt="" class="img-fluid" width="80">
                             </td>
-                            <td>Lorem ipsum dolor sit amet</td>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing el. Lorem ipsum dolor sit amet.</td>
-                            <td>Hunter</td>
-                            <td>12/14/2023</td>
+                            <td>{{$post->title}}</td>
+                            <td>{{Illuminate\Support\Str::limit($post->description, 50)}}</td>
+                            <td>{{$post->category->name}}</td>
+                            <td>{{$post->category_id}}</td>
                             <td>
                                 <a href="" class="btn btn-success btn-sm">Show</a>
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

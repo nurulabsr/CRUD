@@ -21,6 +21,7 @@
                 <a href="" class="btn btn-secondary m-1">Back</a>
                 <a href="" class="btn btn-warning m-1">Recycle Bin</a>
             </div>
+            
            </div>
         </div>
         <div class="card-body">

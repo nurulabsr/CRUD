@@ -11,9 +11,10 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-    return view('index');
+    public function index(){
+    
+    $getAllPost = Post::all();
+    return view('index', compact('getAllPost'));
     }
 
     /**
@@ -31,10 +32,22 @@ class PostController extends Controller
     {
        $request->validate([
         'image' => ['required', 'max:2028', 'mimes:jpeg,png,jpg', 'image'],
-        'title' => ['required', 'string', 'max:250'],
+        'title' => ['required', 'string', 'max:250', 'min:20'],
         'description' => ['required', 'string' , 'max:20000', 'min:100'],
-        'category_id' => ['required', 'integer', 'numeric', 'between:0,1000000000099'],
-       ]);   
+        'category_id' => ['required', 'integer', 'numeric', 'between:0,1000009'],
+       ]); 
+       
+       $ImageFileNameChangedWithTime = time().'_'.$request->image->getClientOriginalName();
+       $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
+    
+       $post = new Post();
+       $post->title = $request->title;
+       $post->description = $request->description;
+       $post->category_id = $request->category_id;
+       $post->image = 'storage/'.$fileName;
+       $post->save(); 
+     
+       return redirect()->route('post.index');
     }
 
     /**
