@@ -39,7 +39,7 @@ class PostController extends Controller
        ]); 
        
        $ImageFileNameChangedWithTime = time().'_'.$request->image->getClientOriginalName();
-       $fileName = $request->image->storeAs('uploads', $ImageFileNameChangedWithTime);
+       $fileName = $request->image->storeAs('ImageDirectory', $ImageFileNameChangedWithTime);
     
        $post = new Post();
        $post->title = $request->title;
@@ -107,8 +107,10 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        // return view('trashed');
+    public function destroy(string $id){
+        $deleteSingleData = Post::findOrFail($id);
+        $deleteSingleData->delete();
+        File::delete(public_path($deleteSingleData->image));
+        return redirect()->route('post.index');
     }
 }
