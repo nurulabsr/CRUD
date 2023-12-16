@@ -110,7 +110,7 @@ class PostController extends Controller
     public function destroy(string $id){
         $deleteSingleData = Post::findOrFail($id);
         $deleteSingleData->delete();
-        File::delete(public_path($deleteSingleData->image));
+        // File::delete(public_path($deleteSingleData->image));
         return redirect()->route('post.index');
     }
 }
