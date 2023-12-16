@@ -43,7 +43,7 @@
                             <td>{{$post->category->name}}</td>
                             <td>{{ $post->created_at->format('Y-m-d') }}</td>
                             <td>
-                                <a href="" class="btn btn-success btn-sm">Show</a>
+                                <a href="{{route('post.show', $post->id)}}" class="btn btn-success btn-sm">Show</a>
                                 <a href="{{route('post.edit', $post->id)}}" class="btn btn-primary btn-sm">Edit</a>
                                 <a href="" class="btn btn-danger btn-sm">Delete</a>
                             </td>
