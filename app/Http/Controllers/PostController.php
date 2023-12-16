@@ -113,4 +113,16 @@ class PostController extends Controller
         // File::delete(public_path($deleteSingleData->image));
         return redirect()->route('post.index');
     }
+
+    public function DeltePostPermanently(){
+
+    }
+
+    public function RecyClyBin(){
+
+        $onlyTrashed = Post::onlyTrashed()->get();
+        return view('recyclebin', compact('onlyTrashed'));
+    }
+
+
 }

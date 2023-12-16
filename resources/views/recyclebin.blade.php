@@ -30,13 +30,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($onlyTrashed as $datum)
                         <tr>
                             <th scope="row">1</th>
                             <td>
-                                <img src="https://picsum.photos/200" alt="" class="img-fluid" width="80">
+                                <img src="{{asset($datum->image)}}" alt="" class="img-fluid" width="80">
                             </td>
-                            <td>Lorem ipsum dolor sit amet</td>
-                            <td>Lorem ipsum dolor sit amet consectetur adipisicing el. Lorem ipsum dolor sit amet.</td>
+                            <td>{{$datum->title}}</td>
+                            <td>{{Illuminate\Support\Str::limit($datum->description, 50)}}</td>
                             <td>Hunter</td>
                             <td>12/14/2023</td>
                             <td>
@@ -45,6 +46,7 @@
                                 <a href="" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

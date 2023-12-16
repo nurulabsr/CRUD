@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-6 d-flex justify-content-end">
                 <a href="{{route('post.create')}}" class="btn btn-secondary">Create</a>
-                <a href="" class="btn btn-warning">Recycle Bin</a>
+                <a href="{{route('post.recyclebin')}}" class="btn btn-warning">Recycle Bin</a>
             </div>
            </div>
         </div>
