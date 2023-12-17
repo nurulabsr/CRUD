@@ -41,7 +41,7 @@
                             <td>{{$datum->category->name}}</td>
                             <td>{{$datum->deleted_at->format('Y-m-d H:i:s')}}</td>
                             <td>
-                                <a href="" class="btn btn-primary btn-sm">Restore</a>
+                                <a href="{{route('post.restore', $datum->id)}}" class="btn btn-primary btn-sm">Restore</a>
                                 <a href="" class="btn btn-danger btn-sm">Permanently Delete</a>
                             </td>
                         </tr>
