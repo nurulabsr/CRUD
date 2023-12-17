@@ -38,12 +38,11 @@
                             </td>
                             <td>{{$datum->title}}</td>
                             <td>{{Illuminate\Support\Str::limit($datum->description, 50)}}</td>
-                            <td>Hunter</td>
+                            <td>{{$datum->category->name}}</td>
                             <td>{{$datum->deleted_at->format('Y-m-d H:i:s')}}</td>
                             <td>
-                                <a href="" class="btn btn-success btn-sm">Show</a>
-                                <a href="" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="" class="btn btn-danger btn-sm">Delete</a>
+                                <a href="" class="btn btn-primary btn-sm">Restore</a>
+                                <a href="" class="btn btn-danger btn-sm">Permanently Delete</a>
                             </td>
                         </tr>
                         @endforeach
