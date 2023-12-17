@@ -31,12 +31,10 @@
                     </thead>
                     <tbody>
                         @foreach($getAllPost as $post)
-                            
-                        
                         <tr>
                             <th scope="row">{{$post->id}}</th>
                             <td>
-                                <img src="{{ asset($post->image) }}" alt="" class="img-fluid" width="80">
+                                <img src="{{ asset($post->image) }}" alt="" class="img-fluid" width="40">
                             </td>
                             <td>{{$post->title}}</td>
                             <td>{{Illuminate\Support\Str::limit($post->description, 50)}}</td>
@@ -55,6 +53,7 @@
                         @endforeach
                     </tbody>
                 </table>
+                {{$getAllPost->links()}}
             </div>
         </div>
     </div>

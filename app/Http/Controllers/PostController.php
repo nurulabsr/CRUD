@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index(){
     
-    $getAllPost = Post::all();
+    $getAllPost = Post::paginate(10);
     return view('index', compact('getAllPost'));
     }
 
