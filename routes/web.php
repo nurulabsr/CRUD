@@ -19,4 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('post/recyclebin', [PostController::class, 'RecyClyBin'])->name('post.recyclebin');
+Route::get('post/restore', [PostController::class, 'Restore'])->name('post.restore');
 Route::resource('post', PostController::class);

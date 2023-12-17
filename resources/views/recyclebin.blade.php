@@ -7,11 +7,11 @@
         <div class="card-header">
            <div class="row">
             <div class="col-md-6">
-              <h4>All post</h4>
+              <h4>Recycle Bin</h4>
             </div>
             <div class="col-md-6 d-flex justify-content-end">
-                <a href="{{route('post.create')}}" class="btn btn-secondary">Back</a>
-                <a href="" class="btn btn-warning">Edit</a>
+                <a href="{{route('post.store')}}" class="btn btn-secondary">Back</a>
+                <a href="{{route('post.create')}}" class="btn btn-warning">Create</a>
             </div>
            </div>
         </div>
@@ -25,7 +25,7 @@
                             <th scope="col" style="width: 20%">Title</th>
                             <th scope="col" style="width: 30%">Description</th>
                             <th scope="col" style="width: 10%">Category</th>
-                            <th scope="col" style="width: 10%">Publish Date</th>
+                            <th scope="col" style="width: 10%">Delete Date</th>
                             <th scope="col" style="width: 20%">Action</th>
                         </tr>
                     </thead>
@@ -39,7 +39,7 @@
                             <td>{{$datum->title}}</td>
                             <td>{{Illuminate\Support\Str::limit($datum->description, 50)}}</td>
                             <td>Hunter</td>
-                            <td>12/14/2023</td>
+                            <td>{{$datum->deleted_at->format('Y-m-d H:i:s')}}</td>
                             <td>
                                 <a href="" class="btn btn-success btn-sm">Show</a>
                                 <a href="" class="btn btn-primary btn-sm">Edit</a>
