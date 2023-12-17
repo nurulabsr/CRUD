@@ -20,4 +20,5 @@ Route::get('/', function () {
 
 Route::get('post/recyclebin', [PostController::class, 'RecyClyBin'])->name('post.recyclebin');
 Route::get('post/restore/{id}', [PostController::class, 'Restore'])->name('post.restore');
+Route::get('post/permanentlyDelete/{id}', [PostController::class, 'DeltePostPermanently'] )->name('post.permanentlyDelete');
 Route::resource('post', PostController::class);

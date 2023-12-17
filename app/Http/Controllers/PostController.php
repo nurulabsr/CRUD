@@ -114,12 +114,14 @@ class PostController extends Controller
         return redirect()->route('post.index');
     }
 
-    public function DeltePostPermanently(){
-
+    public function DeltePostPermanently($id){
+       $singlePost = Post::withTrashed()->findOrFail($id);
+       $singlePost->forceDelete();
+       File::delete(public_path($singlePost->image)); 
+      return redirect()->route('post.recyclebin');
     }
 
     public function RecyClyBin(){
-
         $onlyTrashed = Post::onlyTrashed()->get();
         return view('recyclebin', compact('onlyTrashed'));
     }
